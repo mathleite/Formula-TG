@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+    php:
+        build: .
+        ports:
+            - "80:80"
+        volumes:
+            - /home/matheus/Área de Trabalho/Formula TG/code:/var/www/html
+        networks: 
+            - backend
+networks:
+    backend:
+
