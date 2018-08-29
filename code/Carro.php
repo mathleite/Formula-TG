@@ -1,5 +1,5 @@
-<?php 
-class Carro 
+<?php
+class Carro
 {
 	private $cor;
 	private $marca;
@@ -13,7 +13,7 @@ class Carro
 	{
 		$this->cor = $cor;
 	}
-	
+
 	public function getMarca ()
 	{
 		return $this->marca;
@@ -22,7 +22,7 @@ class Carro
 	{
 		$this->marca = $marca;
 	}
-	
+
 	public function getAno ()
 	{
 		return $this->ano;
@@ -31,16 +31,4 @@ class Carro
 	{
 		$this->ano = $ano;
 	}
-
-	public function exibir() {
-    	return array("cor" =>$this->getCor(),
-                      "marca" =>$this->getMarca(),
-                        "ano" =>$this->getAno());
-    }
 }
-
-$gol = new Carro();
-$gol ->setCor("branco");
-$gol ->setMarca("Wolks");
-$gol ->setAno("2017");
-print_r($gol->exibir());
