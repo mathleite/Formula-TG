@@ -5,9 +5,13 @@ services:
         ports:
             - "80:80"
         volumes:
+<<<<<<< HEAD
             - ./../app:/var/www/html
         networks: 
+=======
+            - ./../code:/var/www/html
+        networks:
+>>>>>>> 920b1ccbc43c33661522d3c7efea30e149e33566
             - backend
 networks:
     backend:
-

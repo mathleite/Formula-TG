@@ -1,5 +1,5 @@
-<?php 
-class Carro 
+<?php
+class Carro
 {
 	private $cor;
 	private $marca;
@@ -13,7 +13,7 @@ class Carro
 	{
 		$this->cor = $cor;
 	}
-	
+
 	public function getMarca ()
 	{
 		return $this->marca;
@@ -22,7 +22,7 @@ class Carro
 	{
 		$this->marca = $marca;
 	}
-	
+
 	public function getAno ()
 	{
 		return $this->ano;
@@ -31,4 +31,8 @@ class Carro
 	{
 		$this->ano = $ano;
 	}
+<<<<<<< HEAD:app/classes/Carro.php
 }
+=======
+}
+>>>>>>> 920b1ccbc43c33661522d3c7efea30e149e33566:code/Carro.php
