@@ -19,25 +19,26 @@ $tg->setAno(2098);
 
 $arrayCarro = array(
 				   array(
-				   		"cor"=>$gol->getCor(),
+				   		"Cor"=>$gol->getCor(),
 						"Marca"=>$gol->getMarca(),
 						"Ano"=>$gol->getAno()
 				   ),
 			 	   array(
-			 	   		"cor"=>$fusca->getCor(),
+			 	   		"Cor"=>$fusca->getCor(),
 						"Marca"=>$fusca->getMarca(),
 					    "Ano"=>$fusca->getAno()
-				   ), 
+				   ),
 				   array(
-			 	   		"cor"=>$tg->getCor(),
+			 	   		"Cor"=>$tg->getCor(),
 						"Marca"=>$tg->getMarca(),
 					    "Ano"=>$tg->getAno()
 				   )
 			  );
 
+
 $corrida = new Corrida($arrayCarro);
 $corrida->iniciarCorrida();
-$corrida->ultrapassagem();
-$corrida->ultrapassagem();
+//$corrida->ultrapassagem();
+//$corrida->ultrapassagem();
 
 
