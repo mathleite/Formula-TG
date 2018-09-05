@@ -4,6 +4,23 @@ class Carro
 	private $cor;
 	private $marca;
 	private $ano;
+	private $modelo;
+
+	/**
+	 * @return mixed
+	 */
+	public function getModelo()
+	{
+		return $this->modelo;
+	}
+
+	/**
+	 * @param mixed $modelo
+	 */
+	public function setModelo($modelo)
+	{
+		$this->modelo = $modelo;
+	}
 
 	public function getCor ()
 	{
