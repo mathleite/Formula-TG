@@ -5,7 +5,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - ./../app:/var/www/html 
+            - ./../.:/var/www/html/formulaTG
         networks:
             - backend
 networks:

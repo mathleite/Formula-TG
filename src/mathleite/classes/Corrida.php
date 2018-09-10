@@ -10,10 +10,8 @@ class Corrida
 		if(count($arrayCarros) > 0)
 		{
 			echo 'A corrida pode começar pois existe mais de um carro !'.PHP_EOL;
-			echo 'Esta é a posição inicial de cada carro:'.PHP_EOL;
-			$this->posicaoCarro();
 		} else {
-			echo 'A corrida não pode começar pois existe apenas um carro :('.PHP_EOL;
+			echo 'A corrida não pode começar pois não existe a quantidade minima de carros :('.PHP_EOL;
 			exit;
 		}
 	}
@@ -29,12 +27,12 @@ class Corrida
 	public function ultrapassagem()
 	{
 			$quantidadeCarros = count($this->arrayCarros);
-			$auxiliar = $this->arrayCarros[$quantidadeCarros - 1];
+			$auxiliar = $this->arrayCarros[1];
 
-			for ($i = $quantidadeCarros - 1; $i > 0; $i--) {
+			for ($i = $quantidadeCarros - 2; $i > 0; $i--) {
 				$this->arrayCarros[$i] = $this->arrayCarros[$i - 1];
 			}
-			$this->arrayCarros[0] = $auxiliar;
+			$this->arrayCarros[1] = $auxiliar;
 			echo 'Aconteceu uma ultrapassagem !' . PHP_EOL;
 			$this->posicaoCarro();
 	}
@@ -46,7 +44,7 @@ class Corrida
             echo 'Posição ['. $i++."] => ";
             print_r("Marca: " . $value['Marca'] . ", ");
             print_r("Modelo: " . $value['Modelo'] . ", ");
-            print_r("Ano: " . $value['Ano'] . " ");
+            print_r("Ano: " . $value['Ano'] . ", ");
 	        print_r("Cor: " . $value['Cor'] . " " .PHP_EOL);
 	        echo PHP_EOL;
         }
