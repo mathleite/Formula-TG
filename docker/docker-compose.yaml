@@ -1,12 +1,12 @@
 version: '3.0'
 services:
-    php:
-        build: .
-        ports:
-            - "80:80"
-        volumes:
-            - ./../.:/var/www/html/formulaTG
-        networks:
-            - backend
+  php:
+    build: .
+    ports:
+    - "80:80"
+    volumes:
+    - ./../.:/var/www/html/formulaTG
+    networks:
+    - backend
 networks:
-    backend:
+  backend:
