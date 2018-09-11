@@ -52,15 +52,15 @@ class Corrida
 		for ($i = $this->arrayCarros[$atual]; $i > 0; $i--) {
 			$this->arrayCarros[$i] = $this->arrayCarros[$i - 1];
 		}
-		$this->arrayCarros[$anterior] = $auxiliar;
+		$this->arrayCarros[1] = $auxiliar;
 		echo 'Aconteceu uma ultrapassagem !' . PHP_EOL;
-		$this->posicaoCarro();
+		$this->posicaoCarro($this->arrayCarros);
 	}
 
-	public function posicaoCarro()
+	public function posicaoCarro($listaCarros)
 	{
 		$i = 1;
-		foreach ($this->arrayCarros as $key => $value) {
+		foreach ($listaCarros as $key => $value) {
 			echo 'Posição [' . $i++ . "] => ";
 			print_r("Marca: " . $value['Marca'] . ", ");
 			print_r("Modelo: " . $value['Modelo'] . ", ");

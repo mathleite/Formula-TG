@@ -86,7 +86,7 @@ $arrayCarro = array(
 
 
 $corrida = new \App\mathleite\classes\Corrida($arrayCarro);
-$corrida->posicaoCarro();
+//$corrida->posicaoCarro($arrayCarro);
 //$corrida->iniciarCorrida();
 $corrida->ultrapassagem(3);
 
