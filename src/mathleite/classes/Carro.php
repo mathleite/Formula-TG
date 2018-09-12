@@ -2,10 +2,10 @@
 namespace App\mathleite\classes;
 class Carro
 {
-	private $cor;
-	private $marca;
-	private $ano;
-	private $modelo;
+	public $cor;
+	public $marca;
+	public $ano;
+	public $modelo;
 
 	/**
 	 * @return mixed

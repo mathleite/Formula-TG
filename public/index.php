@@ -77,7 +77,14 @@ $arrayCarro = array(
 		"Ano" => $tg3->getAno()
 	)
 );
+$deck = new \Ds\Deque([$gol, $fusca, $tg]);
 
+foreach ($deck as $key => $value) {
+	print_r($value);
+}
+
+
+exit;
 $corrida = new \App\mathleite\classes\Corrida($arrayCarro);
 //$corrida->posicaoCarro($arrayCarro);
 //$corrida->iniciarCorrida();
