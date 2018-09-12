@@ -28,22 +28,25 @@ class Corrida
 
 	public function ultrapassagem($current)
 	{
-		if(array_key_exists($current, $this->arrayCarros)) {
+		if (array_key_exists($current, $this->arrayCarros)) {
 			$atual = $this->arrayCarros[$current];
 		} else {
 			print "Este carro não existe" . PHP_EOL;
+			return null;
 		}
 
-		if(array_key_exists($current + 1, $this->arrayCarros)) {
+		if (array_key_exists($current + 1, $this->arrayCarros)) {
 			$proximo = $this->arrayCarros[$current + 1];
 		} else {
 			print "Este é o ultimo carro :(" . PHP_EOL;
+			return null;
 		}
 
-		if(array_key_exists($current - 1, $this->arrayCarros)) {
+		if (array_key_exists($current - 1, $this->arrayCarros)) {
 			$anterior = $this->arrayCarros[$current - 1];
 		} else {
 			print "Este é o primeiro carro, portanto não há carros para ultrapassar! xD" . PHP_EOL;
+			return null;
 		}
 
 		$quantidadeCarros = count($this->arrayCarros);

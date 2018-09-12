@@ -34,6 +34,7 @@ class Posicao
 			return $proximo;
 		} else {
 			print "Este carro é o último" . PHP_EOL;
+			return null;
 		}
 	}
 
@@ -45,6 +46,7 @@ class Posicao
 			return $anterior;
 		} else {
 			print "Este é o primeiro carro, portanto não existe um anterior" . PHP_EOL;
+			return null;
 		}
 
 	}
