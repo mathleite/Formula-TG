@@ -25,6 +25,7 @@ class ComposerStaticInit660481cd02ba2d4704cc6bd8b06a4334
         ),
         'D' => 
         array (
+            'Ds\\' => 3,
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
@@ -48,6 +49,10 @@ class ComposerStaticInit660481cd02ba2d4704cc6bd8b06a4334
         'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Ds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-ds/php-ds/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

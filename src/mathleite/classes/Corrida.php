@@ -1,8 +1,11 @@
 <?php
 
 namespace App\mathleite\classes;
+use DeepCopy\Filter\KeepFilter;
+
 class Corrida
 {
+
 	private $arrayCarros;
 
 	public function __construct($arrayCarros)
@@ -23,7 +26,6 @@ class Corrida
 		echo '1, 2, 3 e JÁ!!.' . PHP_EOL;
 		echo '- A corrida começou !' . PHP_EOL;
 		echo PHP_EOL;
-
 	}
 
 	public function ultrapassagem($current)
@@ -49,6 +51,18 @@ class Corrida
 			return null;
 		}
 
+		$this->posicaoCarro();
+		print $current . PHP_EOL;
+		$retirado = $this->arrayCarros[$current];
+		unset($this->arrayCarros[$current]);
+		$this->posicaoCarro();
+		echo PHP_EOL;
+		if(in_array($anterior, $this->arrayCarros)){
+			$this->arrayCarros[$current - 1] = $retirado;
+		}
+		$this->posicaoCarro();
+		exit;
+
 		$quantidadeCarros = count($this->arrayCarros);
 		$auxiliar = $atual;
 
@@ -60,10 +74,10 @@ class Corrida
 		$this->posicaoCarro($this->arrayCarros);
 	}
 
-	public function posicaoCarro($listaCarros)
+	public function posicaoCarro()
 	{
 		$i = 1;
-		foreach ($listaCarros as $key => $value) {
+		foreach ($this->arrayCarros as $key => $value) {
 			echo 'Posição [' . $i++ . "] => ";
 			print_r("Marca: " . $value['Marca'] . ", ");
 			print_r("Modelo: " . $value['Modelo'] . ", ");

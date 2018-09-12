@@ -78,16 +78,7 @@ $arrayCarro = array(
 	)
 );
 
-//$posicao = new \App\mathleite\classes\Posicao(3, $arrayCarro);
-//$anterior = $posicao->anterior();
-//$atual = $posicao->atual();
-//$proximo = $posicao->proximo();
-
-
-
 $corrida = new \App\mathleite\classes\Corrida($arrayCarro);
 //$corrida->posicaoCarro($arrayCarro);
 //$corrida->iniciarCorrida();
-$corrida->ultrapassagem(3);
-
-
+$corrida->ultrapassagem(2);

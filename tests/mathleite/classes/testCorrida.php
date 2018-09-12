@@ -10,7 +10,6 @@ namespace Tests\mathleite\classes;
 
 
 use App\mathleite\classes\Posicao;
-use phpDocumentor\Reflection\Types\Array_;
 use PHPUnit\Framework\TestCase;
 
 class testCorrida extends TestCase
