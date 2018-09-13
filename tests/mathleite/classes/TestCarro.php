@@ -7,37 +7,37 @@
  */
 
 namespace Tests\mathleite\classes;
-use App\mathleite\classes\Carro;
+use App\mathleite\classes\Car;
 use PHPUnit\Framework\TestCase;
 
 class TestCarro extends TestCase
 {
-	public function testCor()
+	public function testColor()
 	{
-		$tg = new Carro();
-		$tg->setCor("Azul");
-		$this->assertEquals("Azul", $tg->getCor());
+		$tg = new Car();
+		$tg->setColor("Azul");
+		$this->assertEquals("Azul", $tg->getColor());
 	}
 
-	public function testMarca()
+	public function testBrand()
 	{
-		$tg = new Carro();
-		$tg->setMarca("BMW");
-		$this->assertEquals("BMW", $tg->getMarca());
+		$tg = new Car();
+		$tg->setBrand("BMW");
+		$this->assertEquals("BMW", $tg->getBrand());
 	}
 
-	public function testAno()
+	public function testYear()
 	{
-		$tg = new Carro();
-		$tg->setAno(2006);
-		$this->assertEquals(2006, $tg->getAno());
+		$tg = new Car();
+		$tg->setYear(2006);
+		$this->assertEquals(2006, $tg->getYear());
 	}
 
-	public function testModelo()
+	public function testModel()
 	{
-		$tg =  new Carro();
-		$tg->setModelo("4 rodas");
-		$this->assertEquals("4 rodas", $tg->getModelo());
+		$tg =  new Car();
+		$tg->setModel("4 rodas");
+		$this->assertEquals("4 rodas", $tg->getModel());
 	}
 
 }

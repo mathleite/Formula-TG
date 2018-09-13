@@ -1,91 +1,120 @@
 <?php
 require_once '../vendor/autoload.php';
 
-$gol = new \App\mathleite\classes\Carro();
-$fusca = new \App\mathleite\classes\Carro();
-$tg = new \App\mathleite\classes\Carro();
-$tg1 = new \App\mathleite\classes\Carro();
-$tg2 = new \App\mathleite\classes\Carro();
-$tg3 = new \App\mathleite\classes\Carro();
+$gol = new \App\mathleite\classes\Car();
+$fusca = new \App\mathleite\classes\Car();
+$tg = new \App\mathleite\classes\Car();
+$tg1 = new \App\mathleite\classes\Car();
+$tg2 = new \App\mathleite\classes\Car();
+$tg3 = new \App\mathleite\classes\Car();
+$tg4 = new \App\mathleite\classes\Car();
+$tg5 = new \App\mathleite\classes\Car();
+$tg6 = new \App\mathleite\classes\Car();
 
-$gol->setCor("Rosa");
-$gol->setMarca("TG");
-$gol->setAno(1989);
-$gol->setModelo("Sedan");
+$gol->setColor("Rosa");
+$gol->setBrand("TG");
+$gol->setYear(1989);
+$gol->setModel("Sedan");
 
-$fusca->setCor("Azul");
-$fusca->setMarca("Wolks");
-$fusca->setAno(2006);
-$fusca->setModelo("4X4");
+$fusca->setColor("Azul");
+$fusca->setBrand("Wolks");
+$fusca->setYear(2006);
+$fusca->setModel("4X4");
 
-$tg->setCor("vermelho abacaxi");
-$tg->setMarca("TG sedan");
-$tg->setAno(2007);
-$tg->setModelo("Flat");
+$tg->setColor("vermelho abacaxi");
+$tg->setBrand("TG sedan");
+$tg->setYear(2007);
+$tg->setModel("Flat");
 
-$tg1->setCor("preto");
-$tg1->setMarca("TG sedan");
-$tg1->setAno(2098);
-$tg1->setModelo("Flat");
+$tg1->setColor("preto");
+$tg1->setBrand("TG sedan");
+$tg1->setYear(2098);
+$tg1->setModel("Flat");
 
-$tg2->setCor("amarelo");
-$tg2->setMarca("TG sedan");
-$tg2->setAno(2098);
-$tg2->setModelo("Flat");
+$tg2->setColor("amarelo");
+$tg2->setBrand("TG sedan");
+$tg2->setYear(2098);
+$tg2->setModel("Flat");
 
-$tg3->setCor("vermelho ");
-$tg3->setMarca("TG sedan");
-$tg3->setAno(2098);
-$tg3->setModelo("Flat");
+$tg3->setColor("vermelho");
+$tg3->setBrand("TG sedan");
+$tg3->setYear(2098);
+$tg3->setModel("Flat");
 
+$tg4->setColor("roxo");
+$tg4->setBrand("TG sedan");
+$tg->setYear(2098);
+$tg4->setModel("Flat");
+
+$tg5->setColor("verde");
+$tg5->setBrand("TG sedan");
+$tg5->setYear(2098);
+$tg5->setModel("Flat");
+
+$tg6->setColor("laranja");
+$tg6->setBrand("TG sedan");
+$tg6->setYear(2098);
+$tg6->setModel("Flat");
 
 $arrayCarro = array(
 	array(
-		"Cor" => $gol->getCor(),
-		"Marca" => $gol->getMarca(),
-		"Modelo" => $gol->getModelo(),
-		"Ano" => $gol->getAno()
+		"Color" => $gol->getColor(),
+		"Brand" => $gol->getBrand(),
+		"Model" => $gol->getModel(),
+		"Year" => $gol->getYear()
 	),
 	array(
-		"Cor" => $fusca->getCor(),
-		"Marca" => $fusca->getMarca(),
-		"Modelo" => $fusca->getModelo(),
-		"Ano" => $fusca->getAno()
+		"Color" => $fusca->getColor(),
+		"Brand" => $fusca->getBrand(),
+		"Model" => $fusca->getModel(),
+		"Year" => $fusca->getYear()
 	),
 	array(
-		"Cor" => $tg->getCor(),
-		"Marca" => $tg->getMarca(),
-		"Modelo" => $tg->getModelo(),
-		"Ano" => $tg->getAno()
+		"Color" => $tg->getColor(),
+		"Brand" => $tg->getBrand(),
+		"Model" => $tg->getModel(),
+		"Year" => $tg->getYear()
 	),
 	array(
-		"Cor" => $tg1->getCor(),
-		"Marca" => $tg1->getMarca(),
-		"Modelo" => $tg1->getModelo(),
-		"Ano" => $tg1->getAno()
+		"Color" => $tg1->getColor(),
+		"Brand" => $tg1->getBrand(),
+		"Model" => $tg1->getModel(),
+		"Year" => $tg1->getYear()
 	),
 	array(
-		"Cor" => $tg2->getCor(),
-		"Marca" => $tg2->getMarca(),
-		"Modelo" => $tg2->getModelo(),
-		"Ano" => $tg2->getAno()
+		"Color" => $tg2->getColor(),
+		"Brand" => $tg2->getBrand(),
+		"Model" => $tg2->getModel(),
+		"Year" => $tg2->getYear()
 	),
 	array(
-		"Cor" => $tg3->getCor(),
-		"Marca" => $tg3->getMarca(),
-		"Modelo" => $tg3->getModelo(),
-		"Ano" => $tg3->getAno()
+		"Color" => $tg3->getColor(),
+		"Brand" => $tg3->getBrand(),
+		"Model" => $tg3->getModel(),
+		"Year" => $tg3->getYear()
+	),
+	array(
+		"Color" => $tg4->getColor(),
+		"Brand" => $tg4->getBrand(),
+		"Model" => $tg4->getModel(),
+		"Year" => $tg4->getYear()
+	),
+	array(
+		"Color" => $tg5->getColor(),
+		"Brand" => $tg5->getBrand(),
+		"Model" => $tg5->getModel(),
+		"Year" => $tg5->getYear()
+	),
+	array(
+		"Color" => $tg6->getColor(),
+		"Brand" => $tg6->getBrand(),
+		"Model" => $tg6->getModel(),
+		"Year" => $tg6->getYear()
 	)
 );
-$deck = new \Ds\Deque([$gol, $fusca, $tg]);
-
-foreach ($deck as $key => $value) {
-	print_r($value);
-}
+$race = new \App\mathleite\classes\Race($arrayCarro);
+$race->startRace();
+$race->overtaking(8);
 
 
-exit;
-$corrida = new \App\mathleite\classes\Corrida($arrayCarro);
-//$corrida->posicaoCarro($arrayCarro);
-//$corrida->iniciarCorrida();
-$corrida->ultrapassagem(2);
+
