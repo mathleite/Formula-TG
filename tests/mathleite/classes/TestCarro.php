@@ -35,7 +35,7 @@ class TestCarro extends TestCase
 
 	public function testModel()
 	{
-		$tg =  new Car();
+		$tg = new Car();
 		$tg->setModel("4 rodas");
 		$this->assertEquals("4 rodas", $tg->getModel());
 	}

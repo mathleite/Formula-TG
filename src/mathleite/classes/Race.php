@@ -51,7 +51,7 @@ class Race
 		}
 	}
 
-	public function listOvertaking($previous, $atual)
+	public function listOvertaking(object $previous, object $atual): array
 	{
 		$helper = [];
 
@@ -70,9 +70,9 @@ class Race
 		}
 		print 'Happened a overtaking!' . PHP_EOL;
 		print 'The following car  do a overtaking: ' . PHP_EOL;
-		print '---------------------------------------------------------' . PHP_EOL;
+		print '-------------------------------------------------------------------' . PHP_EOL;
 		$this->listOneCar($atual);
-		print '---------------------------------------------------------' . PHP_EOL;
+		print '-------------------------------------------------------------------' . PHP_EOL;
 		$this->arrayCars = $helper;
 		print PHP_EOL;
 		$this->listCar($helper);
@@ -87,7 +87,7 @@ class Race
 			print_r("Color: " . $value->getColor() . ", ");
 			print_r("brand: " . $value->getBrand() . ", ");
 			print_r("model: " . $value->getModel() . ", ");
-			print_r("year: " .$value->getYear());
+			print_r("year: " . $value->getYear());
 			echo PHP_EOL;
 			echo PHP_EOL;
 		}
@@ -105,7 +105,7 @@ class Race
 		$this->listCar($helper);
 	}
 
-	public function listOneCar($car): object
+	public function listOneCar(object $car): object
 	{
 		foreach ($car as $key => $value) {
 			print_r($key . ": " . $value . ", ");

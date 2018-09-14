@@ -59,7 +59,7 @@ $tg6->setModel("Flat");
 $arrayCarro = array($gol, $fusca, $tg, $tg1, $tg2, $tg3, $tg4, $tg5, $tg6);
 $race = new \App\mathleite\classes\Race($arrayCarro);
 $race->startRace();
+$race->overtaking(2);
 $race->overtaking(1);
-$race->overtaking(0);
 $race->finishRace();
 
