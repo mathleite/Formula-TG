@@ -33,7 +33,6 @@ class Race
 		if ($this->startRace == true) {
 			if (array_key_exists($current, $this->arrayCars)) {
 				$atual = $this->arrayCars[$current];
-
 			} else {
 				print 'This car doesnt exist' . PHP_EOL;
 				return null;
@@ -52,7 +51,7 @@ class Race
 		}
 	}
 
-	public function listOvertaking(array $previous, array $atual): array
+	public function listOvertaking($previous, $atual)
 	{
 		$helper = [];
 
@@ -85,10 +84,11 @@ class Race
 		foreach ($helper as $key => $value) {
 			$position = $key + 1;
 			echo "Position [{$position}] => ";
-			print_r("Color: " . $value['Color'] . ", ");
-			print_r("Brand: " . $value['Brand'] . ", ");
-			print_r("Model: " . $value['Model'] . ", ");
-			print_r("Year: " . $value['Year'] . " " . PHP_EOL);
+			print_r("Color: " . $value->getColor() . ", ");
+			print_r("brand: " . $value->getBrand() . ", ");
+			print_r("model: " . $value->getModel() . ", ");
+			print_r("year: " .$value->getYear());
+			echo PHP_EOL;
 			echo PHP_EOL;
 		}
 	}
@@ -102,19 +102,10 @@ class Race
 		for ($i = 0; $i < 3; $i++) {
 			array_push($helper, $podium[$i]);
 		}
-
-		foreach ($helper as $key => $value) {
-			$position = $key + 1;
-			echo "Position [{$position}] => ";
-			print_r("Color: " . $value['Color'] . ", ");
-			print_r("Brand: " . $value['Brand'] . ", ");
-			print_r("Model: " . $value['Model'] . ", ");
-			print_r("Year: " . $value['Year'] . " " . PHP_EOL);
-			echo PHP_EOL;
-		}
+		$this->listCar($helper);
 	}
 
-	public function listOneCar($car): array
+	public function listOneCar($car): object
 	{
 		foreach ($car as $key => $value) {
 			print_r($key . ": " . $value . ", ");
