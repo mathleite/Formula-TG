@@ -1,2 +1,2 @@
 # Formula-TG
-Project done with Docker and PHP7
+Project done with `Docker,composer and PHP7`
