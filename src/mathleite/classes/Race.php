@@ -93,8 +93,9 @@ class Race
 		}
 	}
 
-	public function finishRace($podium): void
+	public function finishRace(): void
 	{
+		$podium = $this->arrayCars;
 		print 'The winners are: ' . PHP_EOL;
 		$helper = [];
 
