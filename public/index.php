@@ -114,7 +114,12 @@ $arrayCarro = array(
 );
 $race = new \App\mathleite\classes\Race($arrayCarro);
 $race->startRace();
-$race->overtaking(8);
+$race->overtaking(1);
+$race->overtaking(0);
+$race->overtaking(2);
+
+//$race->listCar($arrayCarro);
+//$race->finishRace();
 
 
 

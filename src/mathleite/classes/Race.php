@@ -45,27 +45,14 @@ class Race
 				print 'This is already the first car on the race' . PHP_EOL;
 				return null;
 			}
-			$return = $this->lisOvertaking($previous, $atual);
+			$return = $this->listOvertaking($previous, $atual);
 			return $return;
 		} else {
 			print 'The race dont was started !' . PHP_EOL;
 		}
 	}
 
-	public function listCar(array $helper): void
-	{
-		foreach ($helper as $key => $value) {
-			$position = $key + 1;
-			echo "Position [{$position}] => ";
-			print_r("Color: " . $value['Color'] . ", ");
-			print_r("Brand: " . $value['Brand'] . ", ");
-			print_r("Model: " . $value['Model'] . ", ");
-			print_r("Year: " . $value['Year'] . " " . PHP_EOL);
-			echo PHP_EOL;
-		}
-	}
-
-	public function lisOvertaking(array $previous, array $atual): array
+	public function listOvertaking(array $previous, array $atual): array
 	{
 		$helper = [];
 
@@ -87,10 +74,23 @@ class Race
 		print '---------------------------------------------------------' . PHP_EOL;
 		$this->listOneCar($atual);
 		print '---------------------------------------------------------' . PHP_EOL;
-
+		$this->arrayCars = $helper;
 		print PHP_EOL;
 		$this->listCar($helper);
 		return $helper;
+	}
+
+	public function listCar(array $helper): void
+	{
+		foreach ($helper as $key => $value) {
+			$position = $key + 1;
+			echo "Position [{$position}] => ";
+			print_r("Color: " . $value['Color'] . ", ");
+			print_r("Brand: " . $value['Brand'] . ", ");
+			print_r("Model: " . $value['Model'] . ", ");
+			print_r("Year: " . $value['Year'] . " " . PHP_EOL);
+			echo PHP_EOL;
+		}
 	}
 
 	public function finishRace($podium): void
