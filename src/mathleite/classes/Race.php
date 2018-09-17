@@ -10,14 +10,14 @@ use App\mathleite\Exceptions\RaceNotStartedException;
 class Race
 {
 
-	private $arrayCars;
+	private $cars;
 	private $startRace = false;
 
-	public function __construct(array $arrayCars)
+	public function __construct(array $cars)
 	{
-		$this->validateCars($arrayCars);
+		$this->validateCars($cars);
 
-		$this->arrayCars = $arrayCars;
+		$this->cars = $cars;
 	}
 
 	private function validateCars(array $cars): void
@@ -32,24 +32,22 @@ class Race
 	public function startRace(): void
 	{
 		$this->startRace = true;
-		echo 'Starting the race ...' . PHP_EOL;
-		echo '1, 2, 3 and GOO!!.' . PHP_EOL;
-		echo '- The race started !' . PHP_EOL;
-		echo PHP_EOL;
 
+		echo '1, 2, 3 and GOO!!.' . PHP_EOL;
+		echo  "The race started !" . PHP_EOL;
 	}
 
 	public function overtaking(int $current): ?array
 	{
 		if ($this->startRace == true) {
-			if (array_key_exists($current, $this->arrayCars)) {
-				$atual = $this->arrayCars[$current];
+			if (array_key_exists($current, $this->cars)) {
+				$atual = $this->cars[$current];
 			} else {
 				throw new CarDoesntExistsException();
 			}
 
-			if (array_key_exists($current - 1, $this->arrayCars)) {
-				$previous = $this->arrayCars[$current - 1];
+			if (array_key_exists($current - 1, $this->cars)) {
+				$previous = $this->cars[$current - 1];
 			} else {
 				throw new FirstCarException();
 			}
@@ -64,17 +62,17 @@ class Race
 	{
 		$helper = [];
 
-		for ($i = 0; $i < count($this->arrayCars); $i++) {
-			if ($this->arrayCars[$i] === $previous) {
-				array_push($helper, $this->arrayCars[$i + 1]);
+		for ($i = 0; $i < count($this->cars); $i++) {
+			if ($this->cars[$i] === $previous) {
+				array_push($helper, $this->cars[$i + 1]);
 
-			} else if ($this->arrayCars[$i] === $atual) {
+			} else if ($this->cars[$i] === $atual) {
 
-				array_push($helper, $this->arrayCars[$i - 1]);
+				array_push($helper, $this->cars[$i - 1]);
 
 			} else {
 
-				array_push($helper, $this->arrayCars[$i]);
+				array_push($helper, $this->cars[$i]);
 			}
 		}
 		print 'Happened a overtaking!' . PHP_EOL;
@@ -82,7 +80,7 @@ class Race
 		print '-------------------------------------------------------------------' . PHP_EOL;
 		$this->listOneCar($atual);
 		print '-------------------------------------------------------------------' . PHP_EOL;
-		$this->arrayCars = $helper;
+		$this->cars = $helper;
 		print PHP_EOL;
 		$this->listCar($helper);
 		return $helper;
@@ -104,7 +102,7 @@ class Race
 
 	public function finishRace(): void
 	{
-		$podium = $this->arrayCars;
+		$podium = $this->cars;
 		print 'The winners are: ' . PHP_EOL;
 		$helper = [];
 
