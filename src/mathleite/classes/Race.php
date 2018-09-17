@@ -46,7 +46,7 @@ class Race
 		$this->startRace = true;
 
 		echo '1, 2, 3 and GOO!!.' . PHP_EOL;
-		echo  "The race started !" . PHP_EOL;
+		echo "The race started !" . PHP_EOL;
 	}
 
 	/**

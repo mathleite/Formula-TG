@@ -25,7 +25,7 @@ class Car
 		$this->model = $model;
 	}
 
-	public function getColor ()
+	public function getColor()
 	{
 		return $this->color;
 	}
@@ -35,7 +35,7 @@ class Car
 		$this->color = $color;
 	}
 
-	public function getBrand ()
+	public function getBrand()
 	{
 		return $this->brand;
 	}
@@ -45,7 +45,7 @@ class Car
 		$this->brand = $brand;
 	}
 
-	public function getYear ()
+	public function getYear()
 	{
 		return $this->year;
 	}
