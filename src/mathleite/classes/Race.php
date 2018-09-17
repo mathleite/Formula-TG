@@ -10,7 +10,13 @@ use App\mathleite\Exceptions\RaceNotStartedException;
 class Race
 {
 
+	/**
+	 * @var array
+	 */
 	private $cars;
+	/**
+	 * @var bool
+	 */
 	private $startRace = false;
 
 	public function __construct(array $cars)
@@ -20,6 +26,9 @@ class Race
 		$this->cars = $cars;
 	}
 
+	/**
+	 * @param array $cars
+	 */
 	private function validateCars(array $cars): void
 	{
 		if (count($cars) > 1) {
@@ -29,6 +38,9 @@ class Race
 		throw new LessThanTwoCarsException();
 	}
 
+	/**
+	 *
+	 */
 	public function startRace(): void
 	{
 		$this->startRace = true;
@@ -37,6 +49,10 @@ class Race
 		echo  "The race started !" . PHP_EOL;
 	}
 
+	/**
+	 * @param int $current
+	 * @return array|null
+	 */
 	public function overtaking(int $current): ?array
 	{
 		if ($this->startRace == true) {
@@ -58,6 +74,11 @@ class Race
 		}
 	}
 
+	/**
+	 * @param object $previous
+	 * @param object $atual
+	 * @return array
+	 */
 	public function listOvertaking(object $previous, object $atual): array
 	{
 		$helper = [];
@@ -86,6 +107,9 @@ class Race
 		return $helper;
 	}
 
+	/**
+	 * @param array $helper
+	 */
 	public function listCar(array $helper): void
 	{
 		foreach ($helper as $key => $value) {
@@ -100,6 +124,9 @@ class Race
 		}
 	}
 
+	/**
+	 *
+	 */
 	public function finishRace(): void
 	{
 		$podium = $this->cars;
@@ -112,6 +139,10 @@ class Race
 		$this->listCar($helper);
 	}
 
+	/**
+	 * @param object $car
+	 * @return object
+	 */
 	public function listOneCar(object $car): object
 	{
 		foreach ($car as $key => $value) {
