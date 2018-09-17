@@ -2,6 +2,11 @@
 
 namespace App\mathleite\classes;
 
+use App\mathleite\Exceptions\CarDoesntExistsException;
+use App\mathleite\Exceptions\FirstCarException;
+use App\mathleite\Exceptions\LessThanTwoCarsException;
+use App\mathleite\Exceptions\RaceNotStartedException;
+
 class Race
 {
 
@@ -10,12 +15,18 @@ class Race
 
 	public function __construct(array $arrayCars)
 	{
-		$this->arrayCars = $arrayCars;
+		$this->validateCars($arrayCars);
 
-		if (count($arrayCars) < 2) {
-			echo 'The race dont can start' . PHP_EOL;
-			exit;
+		$this->arrayCars = $arrayCars;
+	}
+
+	private function validateCars(array $cars): void
+	{
+		if (count($cars) > 1) {
+			return;
 		}
+
+		throw new LessThanTwoCarsException();
 	}
 
 	public function startRace(): void
@@ -34,21 +45,18 @@ class Race
 			if (array_key_exists($current, $this->arrayCars)) {
 				$atual = $this->arrayCars[$current];
 			} else {
-				print 'This car doesnt exist' . PHP_EOL;
-				return null;
+				throw new CarDoesntExistsException();
 			}
 
 			if (array_key_exists($current - 1, $this->arrayCars)) {
 				$previous = $this->arrayCars[$current - 1];
 			} else {
-				print 'This is already the first car on the race' . PHP_EOL;
-				return null;
+				throw new FirstCarException();
 			}
 			$return = $this->listOvertaking($previous, $atual);
 			return $return;
 		} else {
-			print 'The race dont was started !' . PHP_EOL;
-			return null;
+			throw new RaceNotStartedException();
 		}
 	}
 
