@@ -48,6 +48,7 @@ class Race
 			return $return;
 		} else {
 			print 'The race dont was started !' . PHP_EOL;
+			return null;
 		}
 	}
 
@@ -69,7 +70,7 @@ class Race
 			}
 		}
 		print 'Happened a overtaking!' . PHP_EOL;
-		print 'The following car  do a overtaking: ' . PHP_EOL;
+		print 'The following car does a overtaking: ' . PHP_EOL;
 		print '-------------------------------------------------------------------' . PHP_EOL;
 		$this->listOneCar($atual);
 		print '-------------------------------------------------------------------' . PHP_EOL;
