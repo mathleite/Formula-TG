@@ -9,7 +9,6 @@
 namespace App\mathleite\Exceptions;
 
 use InvalidArgumentException;
-use Throwable;
 
 class RaceNotStartedException extends InvalidArgumentException
 {
